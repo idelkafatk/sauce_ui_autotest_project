@@ -42,7 +42,6 @@ public class LoginTests extends WebTestBase {
     @DisplayName("Ошибка логина при клике LOGIN")
     void shouldAppearAnLoginErrorTest() {
         step("Кликаем на кнопку LOGIN", () -> loginButtonSelector.click());
-
         step(format("Появляется сообщение об ошибке: %s", emailErrorMessage), () -> {
             errorMessageSelector.shouldHave(Condition.text(emailErrorMessage));
         });
@@ -53,7 +52,6 @@ public class LoginTests extends WebTestBase {
     void shouldAppearAnPasswordErrorTest() {
         step("Вводим логин юзера", () -> loginFieldSelector.setValue(username));
         step("Кликаем на кнопку LOGIN", () -> loginButtonSelector.click());
-
         step(format("Появляется сообщение об ошибке: %s", passwordErrorMessage), () -> {
             errorMessageSelector.shouldHave(Condition.text(passwordErrorMessage));
         });
@@ -65,7 +63,6 @@ public class LoginTests extends WebTestBase {
         step("Вводим логин юзера", () -> loginFieldSelector.setValue(lockedUsername));
         step("Вводим пароль юзера", () -> passwordFieldSelector.setValue(password));
         step("Кликаем на кнопку LOGIN", () -> loginButtonSelector.click());
-
         step(format("Появляется сообщение об ошибке: %s", lockedUserErrorMessage), () -> {
             errorMessageSelector.shouldHave(Condition.text(lockedUserErrorMessage));
         });

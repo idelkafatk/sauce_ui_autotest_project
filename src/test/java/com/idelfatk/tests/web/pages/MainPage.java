@@ -11,6 +11,7 @@ public class MainPage extends WebTestBase {
                                         basketPageSelector = $(".shopping_cart_link"),
                                         backpackAddToBasketSelector = $("#add-to-cart-sauce-labs-backpack"),
                                         tShirtAddToBasketSelector = $("#add-to-cart-sauce-labs-bolt-t-shirt");
+
     public static final String mainPageTitleText = "Products";
 
     public MainPage openBasketPage() {

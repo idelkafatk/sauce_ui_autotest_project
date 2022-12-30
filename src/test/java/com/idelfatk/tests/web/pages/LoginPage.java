@@ -15,11 +15,13 @@ public class LoginPage extends WebTestBase {
             password = Project.config.password(),
             wrongUsername = username + "1",
             wrongPassword = password + "1";
+
     public static SelenideElement
             loginFieldSelector = $("#user-name"),
             passwordFieldSelector = $("#password"),
             loginButtonSelector = $("#login-button"),
             errorMessageSelector = $("h3[data-test='error']");
+
     public static String
             emailErrorMessage = "Epic sadface: Username is required",
             passwordErrorMessage = "Epic sadface: Password is required",
