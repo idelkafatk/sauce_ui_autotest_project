@@ -7,38 +7,76 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
-import static io.qameta.allure.Allure.step;
 
 public class LoginPage extends WebTestBase {
-    public static String username = Project.config.username(),
-            lockedUsername = Project.config.lockedUsername(),
-            password = Project.config.password(),
-            wrongUsername = username + "1",
-            wrongPassword = password + "1";
+    private final String username = Project.config.username(),
+            password = Project.config.password();
 
-    public static SelenideElement
+    private final SelenideElement
             loginFieldSelector = $("#user-name"),
             passwordFieldSelector = $("#password"),
             loginButtonSelector = $("#login-button"),
             errorMessageSelector = $("h3[data-test='error']");
 
-    public static String
+    private final String
             emailErrorMessage = "Epic sadface: Username is required",
             passwordErrorMessage = "Epic sadface: Password is required",
             lockedUserErrorMessage = "Epic sadface: Sorry, this user has been locked out.",
-            wrongPasswordOrUsernameErrorMessage = "Epic sadface: Username and password do not match any user in this service";
-
-    @Step("Авторизация на сайте")
-    public LoginPage signInAsUser (String username, String password) {
-        step("Вводим логин юзера", () -> loginFieldSelector.shouldBe(visible).setValue(username));
-        step("Вводим пароль юзера", () -> passwordFieldSelector.shouldBe(visible).setValue(password));
-        step("Кликаем на кнопку LOGIN", () -> loginButtonSelector.shouldNotBe(disabled).click());
-        return this;
-    }
+            wrongUsernameOrPasswordErrorMessage = "Epic sadface: Username and password do not match any user in this service";
 
     @Step("Страница авторизации должна быть видна")
     public LoginPage checkLoginPageIsVisible() {
         loginFieldSelector.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Вводим логин пользователя")
+    public LoginPage setUsername (String username) {
+        loginFieldSelector.setValue(username);
+        return this;
+    }
+
+    @Step("Вводим пароль пользователя")
+    public LoginPage setPassword (String password) {
+        passwordFieldSelector.setValue(password);
+        return this;
+    }
+
+    @Step("Кликаем кнопку LOGIN")
+    public LoginPage clickLoginButton () {
+        loginButtonSelector.click();
+        return this;
+    }
+
+    @Step("Авторизация на сайте")
+    public  MainPage login () {
+        setUsername(username);
+        setPassword(password);
+        clickLoginButton();
+        return new MainPage();
+    }
+
+    @Step("Получаем сообщение об ошибке логина")
+    public LoginPage checkEmailErrorMessage () {
+        errorMessageSelector.shouldHave(text(emailErrorMessage));
+        return this;
+    }
+
+    @Step("Получаем сообщение об ошибке пароля")
+    public LoginPage checkPasswordErrorMessage () {
+        errorMessageSelector.shouldHave(text(passwordErrorMessage));
+        return this;
+    }
+
+    @Step("Получаем сообщение о заблокированном пользователе")
+    public LoginPage checkLockedUserErrorMessage () {
+        errorMessageSelector.shouldHave(text(lockedUserErrorMessage));
+        return this;
+    }
+
+    @Step("Получаем сообщение о неправильном логине или пароле")
+    public LoginPage checkWrongUsernameOrPasswordErrorMessage () {
+        errorMessageSelector.shouldHave(text(wrongUsernameOrPasswordErrorMessage));
         return this;
     }
 }

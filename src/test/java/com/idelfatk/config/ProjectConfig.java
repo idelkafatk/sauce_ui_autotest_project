@@ -23,4 +23,6 @@ public interface ProjectConfig extends Config {
 
     String lockedUsername();
     String browserVersion();
+    String wrongUsername();
+    String wrongPassword();
 }

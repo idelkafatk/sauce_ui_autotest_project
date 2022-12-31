@@ -2,34 +2,49 @@ package com.idelfatk.tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.idelfatk.tests.web.WebTestBase;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPage extends WebTestBase {
-    public static final SelenideElement mainPageTitleSelector = $(".title"),
-                                        basketPageSelector = $(".shopping_cart_link"),
-                                        backpackAddToBasketSelector = $("#add-to-cart-sauce-labs-backpack"),
-                                        tShirtAddToBasketSelector = $("#add-to-cart-sauce-labs-bolt-t-shirt");
+public class MainPage {
+    private final SelenideElement mainPageTitleSelector = $(".title"),
+                                  basketPageSelector = $(".shopping_cart_link"),
+                                  backpackAddToBasketSelector = $("#add-to-cart-sauce-labs-backpack"),
+                                  tShirtAddToBasketSelector = $("#add-to-cart-sauce-labs-bolt-t-shirt");
 
-    public static final String mainPageTitleText = "Products";
+    private final String mainPageTitleText = "Products";
 
-    public MainPage openBasketPage() {
+    private final SelenideElement[] items= {
+            backpackAddToBasketSelector,
+            tShirtAddToBasketSelector
+    };
+
+    @Step("Открываем корзину")
+    public BasketPage openBasketPage() {
         basketPageSelector.click();
+        return new BasketPage();
+    }
+
+    @Step("Проверяем количество товаров в корзине")
+    public MainPage checkBasketSize(String itemsCounty) {
+        basketPageSelector.shouldHave(text(itemsCounty));
         return this;
     }
 
-    public MainPage checkBasketSize(String basketSize) {
-        basketPageSelector.shouldHave(text(basketSize));
-        return this;
-    }
-
+    @Step("Проверяем, что находимся на главной странице")
     public MainPage checkMainPageIsVisible () {
         mainPageTitleSelector.shouldHave(text(mainPageTitleText));
         return this;
     }
 
-    public MainPage addItemsToBasket (SelenideElement[] items) {
+    @Step("Получаем количество добавленных товаров")
+    public String getItemsCounty () {
+        return Integer.toString(items.length);
+    }
+
+    @Step("Добавляем товары в корзину")
+    public MainPage addItemsToBasket () {
         for (SelenideElement item : items) {
             item.click();
         }
