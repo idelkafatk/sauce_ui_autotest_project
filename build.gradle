@@ -33,7 +33,8 @@ dependencies {
             "org.aeonbits.owner:owner:1.0.12",
             "org.assertj:assertj-core:3.23.1",
             "com.github.javafaker:javafaker:1.0.2",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.junit.platform:junit-platform-engine:1.9.0")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:2.0.6",
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
@@ -41,8 +42,8 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
 }
 
 tasks.withType(Test) {
@@ -54,8 +55,8 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.enabled'                 : true,
                 'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
                 'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+                'junit.jupiter.execution.parallel.config.strategy'         : 'custom',
+                'junit.jupiter.execution.parallel.config.custom.class'     : 'com.idelfatk.parallelconfig.CustomStrategy'
         ]
     }
 
@@ -67,5 +68,3 @@ tasks.withType(Test) {
         }
     }
 }
-sourceCompatibility = JavaVersion.VERSION_1_9
-targetCompatibility = JavaVersion.VERSION_1_9
