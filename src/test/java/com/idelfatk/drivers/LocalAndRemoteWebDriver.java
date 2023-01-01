@@ -17,6 +17,7 @@ public class LocalAndRemoteWebDriver {
         Configuration.baseUrl = Project.config.baseUrl();
         Configuration.browser = Project.config.browser();
         Configuration.browserVersion = Project.config.browserVersion();
+        Configuration.pageLoadTimeout = 60000;
 
         MutableCapabilities capabilities = new DesiredCapabilities();
 

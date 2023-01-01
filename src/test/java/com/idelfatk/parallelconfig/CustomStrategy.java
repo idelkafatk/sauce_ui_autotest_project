@@ -6,6 +6,8 @@ import org.junit.platform.engine.support.hierarchical.ParallelExecutionConfigura
 import org.junit.platform.engine.support.hierarchical.ParallelExecutionConfigurationStrategy;
 
 public class CustomStrategy implements ParallelExecutionConfiguration, ParallelExecutionConfigurationStrategy {
+    // Стратегия fixed не позволяет выбрать количество потоков для параллельного запуска тестов
+    // Проблема более менее решается таким костылем, и то значение getMinimumRunnable() должно быть 0
     int threads = Integer.parseInt(Project.config.threads());
     @Override
     public int getParallelism() {
