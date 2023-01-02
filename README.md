@@ -46,7 +46,7 @@
   <code><img width="5%" title="Github" src="images/logo/github.svg"></code>
   <code><img width="5%" title="Jenkins" src="images/logo/jenkins-logo.svg"></code>
   <code><img width="5%" title="Jira" src="images/logo/jira-logo.svg"></code>
-  <code><img width="5%" title="Telegram" src="images/logo/Telegram.svg"></code>
+  <code><img width="5%" title="Telegram" src="images/logo/telegram.svg"></code>
 </p>
 
 >* Автотесты написаны на `Java` с использованием фреймворка `Selenide`
@@ -166,7 +166,7 @@ gradle clean test -Dthreads=4
 # <img width="4%" title="Jira" src="images/logo/telegram.svg"><a id="telegram">Уведомления в Telegram</a>
 
 <p align="center">
-  <img src="images/screens/telegram_notifications.png" alt="job" width="800">
+  <img src="images/screens/telegram_notifications.png" alt="job" width="400">
 </p>
 
 [Вернуться наверх ⬆](#lift)
