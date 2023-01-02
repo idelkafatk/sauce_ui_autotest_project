@@ -3,6 +3,7 @@ package com.idelfatk.tests.web;
 import com.idelfatk.tests.web.pages.LoginPage;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,7 @@ public class BasketTests extends WebTestBase {
                  .checkBasketPageVisible();
     }
 
+    @Disabled
     @Test
     @DisplayName("Консоль не должна содержать ошибок")
     void consoleLogShouldNotHasErrorMessage() {

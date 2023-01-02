@@ -22,7 +22,7 @@ public class LoginPage extends WebTestBase {
             emailErrorMessage = "Epic sadface: Username is required",
             passwordErrorMessage = "Epic sadface: Password is required",
             lockedUserErrorMessage = "Epic sadface: Sorry, this user has been locked out.",
-            wrongUsernameOrPasswordErrorMessage = "Epic sadface: Username and password do not match any user in this service";
+            wrongUsernameOrPasswordErrorMessage = "Epic sad_face: Username and password do not match any user in this service";
 
     @Step("Страница авторизации должна быть видна")
     public LoginPage checkLoginPageIsVisible() {
