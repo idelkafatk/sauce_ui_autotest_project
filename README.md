@@ -149,6 +149,11 @@ gradle clean test -Dthreads=4
 </p>
 
 В разделе `Testcases` автоматически подгружаются тест-кейсы 
+
+<p align="center">
+  <img src="images/screens/allureto_testcases.png" alt="job" width="800">
+</p>
+
 > Можно добавлять ручные тест-кейсы \
 > Доступен экспорт тест-кейсов в _PDF_, _CSV_ \
 > Есть возможность выборочно запускать тесты, создавать тест-планы и т.д.
