@@ -102,7 +102,7 @@ gradle clean test -Dthreads=4
 > `CATEGORIES` - отображение тестов по категориям 
 
 <p align="center">
-  <img src="images/screens/allure_mainpage.png" alt="job" width="800">
+  <img src="images/screens/allure_main.png" alt="job" width="800">
 </p>
 
 На странице `Suites` можно посмотреть информацию о тестах:
