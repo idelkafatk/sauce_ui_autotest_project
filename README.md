@@ -1,6 +1,8 @@
+<p align="right">
+<img width="10%" title="Saucelab" src="images/logo/saucelabs-ar21.svg">
+</p>
 
-# Проект по автоматизации тестирования [SauceLabs](https://saucedemo.com/) <img width="10%" title="Saucelab" src="images/logo/saucelabs-ar21.svg">
-
+# Проект по автоматизации тестирования [SauceLabs](https://saucedemo.com/)
 
 <a id="lift"></a>
 ## Содержание :clipboard:
@@ -145,7 +147,7 @@ gradle clean test -Dthreads=4
   <img src="images/screens/allureto_launch_details.png" alt="job" width="800">
 </p>
 
-В разделе `Testcases` автоматически подгружаются тест-кейсы \
+В разделе `Testcases` автоматически подгружаются тест-кейсы 
 > Можно добавлять ручные тест-кейсы \
 > Доступен экспорт тест-кейсов в _PDF_, _CSV_ \
 > Есть возможность выборочно запускать тесты, создавать тест-планы и т.д.
