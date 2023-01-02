@@ -28,14 +28,14 @@ public class LoginTests extends WebTestBase {
     }
 
     @Test
-    @DisplayName("Ошибка логина при клике LOGIN")
+    @DisplayName("Ошибка авторизации при пустом логине и пароле")
     void shouldAppearAnLoginErrorTest() {
         loginPage.clickLoginButton()
                  .checkEmailErrorMessage();
     }
 
     @Test
-    @DisplayName("Ошибка пароля при клике LOGIN")
+    @DisplayName("Ошибка авторизации при пустом пароле")
     void shouldAppearAnPasswordErrorTest() {
         loginPage.setUsername(Project.config.username())
                  .clickLoginButton()
