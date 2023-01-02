@@ -92,4 +92,29 @@ gradle clean test -Dthreads=4
   <img src="images/screens/jenkins_results.png" alt="job" width="800">
 </p>
 
+# <img width="4%" title="Allure Report" src="images/logo/allure-Report-logo.svg"><a id="allure">Отчет о результатах тестирования в Allure Report</a>
+
+Главная страница `Allure Report` включает в себя:
+> `ALLURE REPORT` - дата и время проведения тестов,а также диаграмму с указанием процента и количества успешных, 
+> упавших и сломавшихся в процессе выполнения тестов \
+> `TREND` - тенденция выполнения для всех запусков \
+> `SUITES` - отображение тестов по тестовым наборам \
+> `CATEGORIES` - отображение тестов по категориям 
+
+<p align="center">
+  <img src="images/screens/allure_mainpage.png" alt="job" width="800">
+</p>
+
+На странице `Suites` можно посмотреть информацию о тестах:
+
+<p align="center">
+  <img src="images/screens/allure_suites.png" alt="job" width="800">
+</p>
+
+Также там доступны тестовые артефакты:
+> * _Скриншоты_
+> * _Логи_
+> * _Видео_
+
+
 [Вернуться наверх ⬆](#lift)
