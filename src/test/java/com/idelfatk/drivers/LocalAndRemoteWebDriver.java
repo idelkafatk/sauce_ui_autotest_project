@@ -4,8 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.idelfatk.config.Project;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.idelfatk.config.Project.isRemoteDriver;
@@ -22,19 +20,9 @@ public class LocalAndRemoteWebDriver {
 
         if (isRemoteDriver()) {
             Configuration.remote = Project.config.remoteDriver();
+            setChromeOptions(capabilities);
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
-        }
-
-        switch (Project.config.browser()) {
-            case "chrome":
-                setChromeOptions(capabilities);
-                break;
-            case "firefox":
-                setFirefoxOptions(capabilities);
-                break;
-            default:
-                Configuration.browserCapabilities = capabilities;
         }
     }
 
@@ -46,14 +34,6 @@ public class LocalAndRemoteWebDriver {
                 .addArguments("--disable-notifications")
                 .addArguments("--lang=en-US")
                 .setExperimentalOption("excludeSwitches", new String[]{"enable-automation"})
-                .merge(capabilities);
-    }
-
-    public static void setFirefoxOptions(MutableCapabilities capabilities) {
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("intl.accept_languages", "en-US");
-        Configuration.browserCapabilities = new FirefoxOptions()
-                .setProfile(profile)
                 .merge(capabilities);
     }
 }
