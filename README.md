@@ -11,14 +11,13 @@
 * <a href="#gradle">Запуск тестов</a>
     + <a href="#gradle">Gradle</a>
     + <a href="#jenkins">Jenkins</a>
-* <a href="#screenshot">Скриншоты и видео</a>
-    + <a href="#selenoid">Selenoid</a>
-    + <a href="#jenkins">Jenkins</a>
-    + <a href="#allure">Allure TestOps, Allure Report</a>
-    + <a href="#notifications">Telegram, Email</a>
+* <a href="#allure">Отчет о результатах тестирования</a>
+    + <a href="#allure">Allure Report</a>
+    + <a href="#alluretestops">Интеграция с Allure TestOps</a>
+* <a href="#jira">Интеграция с Jira</a>
+* <a href="#telegram">Уведомления в Telegram</a>
 
 # <a id="description">Описание</a>
-
 Проект включает в себя UI-тесты.\
 Некоторые факты о проекте:
 
@@ -116,5 +115,55 @@ gradle clean test -Dthreads=4
 > * _Логи_
 > * _Видео_
 
+<p align="center">
+  <img src="images/screens/allure_artifacts.png" alt="job" width="800">
+</p>
+
+# <img width="4%" title="Allure TestOPS" src="images/logo/allure-ee-logo.svg"><a id="alluretestops">Интеграция с Allure TestOps</a>
+
+Инфографику по проведенным тестам можно посмотреть в разделе `Dashborads`
+
+<p align="center">
+  <img src="images/screens/allureto_dashboard.png" alt="job" width="800">
+</p>
+
+В разделе `Launches` находится история запусков тестов
+
+<p align="center">
+  <img src="images/screens/allureto_launch.png" alt="job" width="800">
+</p>
+
+Кликнув на проект, попадаем в `Детали проекта`
+> Внутри доступны следующие вкладки: 
+> * `Overview` - общая информация по тестам
+> * `Tree` - информация по каждому тесту
+> * `Errors` - логи ошибок
+> * `Graphs` - графическое представление времени проведения тестов
+> * `Timeline` - показан таймлайн всех тестов
+
+<p align="center">
+  <img src="images/screens/allureto_launch_details.png" alt="job" width="800">
+</p>
+
+В разделе `Testcases` автоматически подгружаются тест-кейсы \
+> Можно добавлять ручные тест-кейсы \
+> Доступен экспорт тест-кейсов в _PDF_, _CSV_ \
+> Есть возможность выборочно запускать тесты, создавать тест-планы и т.д.
+
+<p align="center">
+  <img src="images/screens/allureto_add.png" alt="job" width="800">
+</p>
+
+# <img width="4%" title="Jira" src="images/logo/jira-logo.svg"><a id="jira">Интеграция с Jira</a>
+
+<p align="center">
+  <img src="images/screens/jira_task.png" alt="job" width="800">
+</p>
+
+# <img width="4%" title="Jira" src="images/logo/jira-logo.svg"><a id="telegram">Уведомления в Telegram</a>
+
+<p align="center">
+  <img src="images/screens/telegram_notifications.png" alt="job" width="800">
+</p>
 
 [Вернуться наверх ⬆](#lift)
