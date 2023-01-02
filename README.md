@@ -163,7 +163,7 @@ gradle clean test -Dthreads=4
   <img src="images/screens/jira_task.png" alt="job" width="800">
 </p>
 
-# <img width="4%" title="Jira" src="images/logo/jira-logo.svg"><a id="telegram">Уведомления в Telegram</a>
+# <img width="4%" title="Jira" src="images/logo/telegram.svg"><a id="telegram">Уведомления в Telegram</a>
 
 <p align="center">
   <img src="images/screens/telegram_notifications.png" alt="job" width="800">
