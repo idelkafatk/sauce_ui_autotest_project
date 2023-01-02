@@ -41,7 +41,7 @@
   <code><img width="5%" title="JUnit5" src="images/logo/junit5-logo.svg"></code>
   <code><img width="5%" title="Allure Report" src="images/logo/allure-Report-logo.svg"></code>
   <code><img width="5%" title="Allure TestOps" src="images/logo/allure-ee-logo.svg"></code>
-  <code><img width="5%" title="Github" src="images/logo/GitHub.svg"></code>
+  <code><img width="5%" title="Github" src="images/logo/github.svg"></code>
   <code><img width="5%" title="Jenkins" src="images/logo/jenkins-logo.svg"></code>
   <code><img width="5%" title="Jira" src="images/logo/jira-logo.svg"></code>
   <code><img width="5%" title="Telegram" src="images/logo/Telegram.svg"></code>
@@ -95,7 +95,7 @@ gradle clean test -Dthreads=4
 # <img width="4%" title="Allure Report" src="images/logo/allure-Report-logo.svg"><a id="allure">Отчет о результатах тестирования в Allure Report</a>
 
 Главная страница `Allure Report` включает в себя:
-> `ALLURE REPORT` - дата и время проведения тестов,а также диаграмму с указанием процента и количества успешных, 
+> `ALLURE REPORT` - дата и время проведения тестов,а также диаграмма с указанием процента и количества успешных, 
 > упавших и сломавшихся в процессе выполнения тестов \
 > `TREND` - тенденция выполнения для всех запусков \
 > `SUITES` - отображение тестов по тестовым наборам \
