@@ -1,10 +1,11 @@
 <p align="right">
-<img width="10%" title="Saucelab" src="images/logo/saucelabs-ar21.svg">
+<img width="20%" title="Saucelab" src="images/logo/saucelabs-ar21.svg">
 </p>
+
+<a id="lift"></a>
 
 # Проект по автоматизации тестирования [SauceLabs](https://saucedemo.com/)
 
-<a id="lift"></a>
 ## Содержание :clipboard:
 
 * <a href="#description">Описание проекта и особенности</a>
